@@ -1,0 +1,240 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.app-main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* PostFilter Styles */
+.post-filter .filter-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.filter-info {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* PostList Styles */
+.posts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.posts-table thead {
+  background-color: #f8f9fa;
+}
+
+.posts-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #667eea;
+  border-bottom: 2px solid #667eea;
+}
+
+.posts-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.posts-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.no-posts {
+  text-align: center;
+  color: #999;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+/* PostForm Styles */
+.post-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.post-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.post-form input,
+.post-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.post-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button Styles */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Footer Styles */
+.app-footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-main {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .posts-table {
+    font-size: 0.9rem;
+  }
+
+  .posts-table th,
+  .posts-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
