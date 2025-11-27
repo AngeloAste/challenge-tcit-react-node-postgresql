@@ -9,12 +9,14 @@ Este proyecto fue desarrollado como parte del **Challenge Técnico TCIT**, que c
 - **Backend:** Node.js + Express  
 - **Base de datos:** PostgreSQL  
 - **CRUD completo de Posts**
-
 Un **Post** debe contener:  
 - `name`  
 - `description`  
 
 La app incluye creación, listado, filtrado local y eliminación de posts.
+
+
+<img width="1429" height="924" alt="image" src="https://github.com/user-attachments/assets/557e7d7d-32f0-469f-a16e-ee2c0744a001" />
 
 ---
 
