@@ -26,7 +26,7 @@ function PostList() {
   return (
     <div className="post-list">
       <h2>Lista de Posts</h2>
-      {filteredItems.length === 0 ? (
+      {!filteredItems || filteredItems.length === 0 ? (
         <p className="no-posts">No hay posts para mostrar</p>
       ) : (
         <table className="posts-table">
