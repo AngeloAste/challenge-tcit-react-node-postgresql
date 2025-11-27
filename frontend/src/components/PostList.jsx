@@ -9,8 +9,9 @@ function PostList() {
     if (window.confirm(`¿Estás seguro de eliminar el post "${name}"?`)) {
       try {
         await dispatch(deletePost(id)).unwrap();
+        alert('✅ Post eliminado exitosamente');
       } catch (error) {
-        alert('Error al eliminar el post: ' + error.message);
+        alert('❌ Error al eliminar el post: ' + error.message);
       }
     }
   };
@@ -25,7 +26,12 @@ function PostList() {
 
   return (
     <div className="post-list">
-      <h2>Lista de Posts</h2>
+      <h2>
+        Lista de Posts
+        {filteredItems && filteredItems.length > 0 && (
+          <span className="post-count"> ({filteredItems.length})</span>
+        )}
+      </h2>
       {!filteredItems || filteredItems.length === 0 ? (
         <p className="no-posts">No hay posts para mostrar</p>
       ) : (

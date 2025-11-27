@@ -8,6 +8,7 @@ function PostForm() {
     name: '',
     description: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,16 +21,33 @@ function PostForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validación de campos vacíos
     if (!formData.name.trim() || !formData.description.trim()) {
       alert('Por favor completa todos los campos');
       return;
     }
 
+    // Validación de longitud mínima
+    if (formData.name.trim().length < 3) {
+      alert('El nombre debe tener al menos 3 caracteres');
+      return;
+    }
+
+    if (formData.description.trim().length < 5) {
+      alert('La descripción debe tener al menos 5 caracteres');
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
       await dispatch(createPost(formData)).unwrap();
       setFormData({ name: '', description: '' });
+      alert('✅ Post creado exitosamente');
     } catch (error) {
-      alert('Error al crear el post: ' + error.message);
+      alert('❌ Error al crear el post: ' + error.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -59,7 +77,9 @@ function PostForm() {
             rows="4"
           />
         </div>
-        <button type="submit" className="btn-primary">Crear Post</button>
+        <button type="submit" className="btn-primary" disabled={isSubmitting}>
+          {isSubmitting ? 'Creando...' : 'Crear Post'}
+        </button>
       </form>
     </div>
   );
